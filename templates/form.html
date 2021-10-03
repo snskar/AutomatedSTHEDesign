@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ShellandTubeHeatExchangerDesign</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		
+		<style>
+			.column {
+  			float: left;
+  			width: 50%;
+  			padding: 10px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+  			content: "";
+  			display: table;
+  			clear: both;
+			}
+			
+		</style>
+
+	</head>
+
+	<body align = center>
+
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"><legend><h1>Shell and Tube Heat Exchanger</h1></legend></div>
+			<div class="col-md-4"></div>
+		</div>
+
+
+			<br>
+			<div class="row">
+			<div></div>
+
+			<div>
+				
+				<form class="form-horizontal" action={{ url_for('result') }}  method="post">
+
+					<div class = "column">
+
+						<h4> Shell Side Fluid Properties </h4> <br>
+					
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Temperature In (Celsius):</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="ShellTin" placeholder="&nbsp;0&nbsp;" value = "85" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Temperature Out (Celsius):</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="ShellTout" placeholder="&nbsp;0&nbsp;" value = "55" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Specific Heat (J/kgK): </label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="ShellCp" placeholder="&nbsp;0&nbsp;" value = "2156.202" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Thermal Conducitivity: (W/mK)</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="ShellK" placeholder="&nbsp;0&nbsp;" value =  "0.140" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Density (kg/m^3):</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="Shellro" placeholder="&nbsp;0&nbsp;" value = "780.0" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Viscosity: (Pas)</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.0000001 class="form-control" name="Shellmu" placeholder="&nbsp;0&nbsp;"  value = "0.00075" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Founling Factor (m^2K/W): </label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.0000001 class="form-control" name="ShellRf" placeholder="&nbsp;0&nbsp;" value = "0.001" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Prandtl Number: </label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="ShellPr" placeholder="&nbsp;0&nbsp;" value = "0" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Mass flow rate (kg/s): </label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="Shellw" placeholder="&nbsp;0&nbsp;" value = "1.95" required>
+							</div>
+						</div>
+
+
+					</div>
+
+					<div class = "column">
+						
+						<h4> Tube Side Fluid Properties </h4> <br>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Temperature In (Celsius):</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="TubeTin" placeholder="&nbsp;0&nbsp;" value = "35" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Temperature Out (Celsius):</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="TubeTout" placeholder="&nbsp;0&nbsp;" value = "45" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Specific Heat (J/kgK): </label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="TubeCp" placeholder="&nbsp;0&nbsp;" value = "4179.63" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Thermal Conducitivity: (W/mK)</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="TubeK" placeholder="&nbsp;0&nbsp;" value = "0.628" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Density (kg/m^3):</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="Tubero" placeholder="&nbsp;0&nbsp;" value = "992.63" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Viscosity: (Pas)</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.0000001 class="form-control" name="Tubemu" placeholder="&nbsp;0&nbsp;" value = "0.0006663" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Founling Factor (m^2K/W): </label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.0000001 class="form-control" name="TubeRf" placeholder="&nbsp;0&nbsp;" value = "0.00053" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Prandtl Number: </label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="TubePr" placeholder="&nbsp;0&nbsp;" value = "4.495" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">Mass flow rate (kg/s): </label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.001 class="form-control" name="Tubew" placeholder="&nbsp;0&nbsp;" value = "0">
+							</div>
+						</div>
+
+
+					</div>
+
+					<div class = "column">
+
+						<div class="form-group">
+							<label class="control-label col-xs-3" for="var_1">LMTD Correction Factor</label>
+							<div class="col-xs-7">
+								<input type="number" step = 0.0000001 class="form-control" name="Ft" placeholder="&nbsp;0&nbsp;"  value = "0.93" required>
+							</div>
+						</div>
+
+					</div>
+
+					
+					<div class="form-group">
+            			<div class="col-xs-offset-3 col-xs-9">
+                			<input type="submit" class="btn btn-success" value="Submit">
+                			<input type="reset" class="btn btn-danger" value="Reset">
+            			</div>
+        			</div>
+        		</form>
+        	</div>
+			
+        	<div class="col-md-4"></div></div>
+		</div>
+	</body>
+</html>

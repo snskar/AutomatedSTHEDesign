@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ShellandTubeHeatExchangerDesign</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		
+		<style>
+			.column {
+  			float: left;
+  			width: 50%;
+  			padding: 10px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+  			content: "";
+  			display: table;
+  			clear: both;
+			}
+			
+		</style>
+
+	</head>
+
+	<body align = center>
+
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"><legend><h1>Design Results</h1></legend></div>
+			<div class="col-md-4"></div>
+		</div>
+
+
+			<br>
+			<div class="row">
+			<div></div>
+
+			<div>
+				
+				<form class="form-horizontal">
+
+					<div class = "column">
+
+						<h4> Shell Side Fluid Values </h4> <br>
+					
+						<fieldset = disabled>
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Internal Diameter (inches)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="ShellID"  placeholder = {{naphtha.di/0.0254}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Cross Flow Velocity (m/s)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="ShellVs"  placeholder = {{naphtha.Vs}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Reynolds' Number</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="ShellRe"  placeholder = {{naphtha.Re}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Heat transfer coefficient (W/m^2K)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="Shellh"  placeholder = {{naphtha.h}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Nusselt Number</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="ShellNu"  placeholder = {{naphtha.Nu}}>
+							    </div>
+						    </div>
+
+                        </fieldset>
+
+					</div>
+
+					<div class = "column">
+						
+						<h4> Tube Side Fluid Values </h4> <br>
+
+                        <fieldset = disabled>
+                            
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Internal Diameter (inches)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="TubeID"  placeholder = {{water.di/0.0254}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Outer Diameter (inches)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="TubeID"  placeholder = {{water.do/0.0254}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Flow Velocity (m/s)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="Tubevel"  placeholder = {{water.vel}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Reynolds' Number</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="waterRe"  placeholder = {{water.Re}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Heat transfer coefficient (W/m^2K)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="waterh"  placeholder = {{water.h}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Nusselt Number</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="TubeNu"  placeholder = {{water.Nu}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Pressure Drop (Pa)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="TubedelP"  placeholder = {{water.delP}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Tube Length (m) </label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="Tubept"  placeholder = "6.095">
+							    </div>
+						    </div>
+
+                        </fieldset>
+
+
+						
+
+					</div>
+
+                    <div class = "column">
+
+						<h4> Tube Sheet Specifications </h4> <br>
+					
+						<fieldset = disabled>
+                            
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Number of tubes</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="Tubent"  placeholder = {{water.nt}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Pitch Type</label>
+							    <div class="col-xs-7">
+								    <input type="text" class="form-control" name="pitchtype"  placeholder = "Square">
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Pitch Length (inches)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="Tubept"  placeholder = {{water.pt/0.0254}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Baffle Cut</label>
+							    <div class="col-xs-7">
+								    <input type="text" class="form-control" name="bafflecut"  placeholder = "25%">
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Baffle Spacing (inches) </label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="bafflecut"  placeholder = {{(naphtha.di/2)/0.0254}}>
+							    </div>
+						    </div>
+
+                        </fieldset>
+
+					</div>
+
+                    <div class = "column">
+
+						<h4> Overall </h4> <br>
+					
+						<fieldset = disabled>
+                            
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Exchanger Type</label>
+							    <div class="col-xs-7">
+								    <input type="text" class="form-control" name="exchangertype"  placeholder = "1-Shell Pass 2-Tube Pass">
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Total Heat Exchanged (J)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="Q"  placeholder = {{water.Q}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Overall Heat Transfer Coefficient (W/m^2K)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="U"  placeholder = {{water.Uoverall}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Area of Heat Transfer Required (m^2)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="A"  placeholder = {{water.Aoverall}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">LMTD (K)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="LMTD"  placeholder = {{water.LMTD}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">LMTD Correction Factor</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="Ft"  placeholder = {{water.Ft}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Tolerance (%)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="tolerance"  placeholder = {{water.tolerance}}>
+							    </div>
+						    </div>
+
+                            <div class="form-group">
+							    <label class="control-label col-xs-3" for="var_1">Overdesign (%)</label>
+							    <div class="col-xs-7">
+								    <input type="number" class="form-control" name="overdesign"  placeholder = {{water.overdesign}}>
+							    </div>
+						    </div>
+
+                        </fieldset>
+
+					</div>
+
+            
+
+
+        		</form>
+        	</div>
+			
+        	<div class="col-md-4"></div></div>
+		</div>
+	</body>
+</html>
