@@ -3,7 +3,7 @@
 
 ## Code Description
 
-## Objective
+### Objective
 The objective of this project was to automate the design of shell and tube heat
 exchanger. The fluid parameters are fed into the app as input and the app outputs
 the design specifications required to meet the requirements.
